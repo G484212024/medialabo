@@ -18,20 +18,21 @@ function print(data) {
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
     let d=[
-  {n:'経度'+(data.coord.lon)},
-  {n:'緯度'+data.coord.lat},
-  {n:'天気'+data.weather[0].description},
-  {n:'最低気温'+data.main.temp_min},
-  {n:'最高気温'+data.main.temp_max},
-  {n:'湿度'+data.main.humidity},
-  {n:'風速'+data.wind.speed},
-  {n:'風向'+data.wind.deg},
-  {n:'都市名'+data.name}
-    ];
+        {n:'都市名'+data.name},
+        {n:'経度'+(data.coord.lon)},
+        {n:'緯度'+data.coord.lat},
+        {n:'天気'+data.weather[0].description},
+        {n:'最低気温'+data.main.temp_min},
+        {n:'最高気温'+data.main.temp_max},
+        {n:'湿度'+data.main.humidity},
+        {n:'風速'+data.wind.speed},
+        {n:'風向'+data.wind.deg},
+      ];
 
     let di=document.querySelector('div#result'); 
     let u=document.createElement('ul');
-    u.setAttribute('id','jyoho');
+    u.id='box';
+    u.setAttribute('id','box');
     di.insertAdjacentElement('afterend',u); 
      
 
@@ -62,11 +63,16 @@ let toshi = {
 
 let b = document.querySelector('button#print');
 
-b.addEventListener('click',sendRequest);
+b.addEventListener('click',sendRequest); 
+let h=document.createElement('h1');
+h.setAttribute('id','sekainotennki');
+let ul=document.querySelector('ul'); 
+ul.insertAdjacentElement('beforebegin',h);
+h.textContent = '世界の天気';
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
-  u=document.querySelector('ul#jyoho'); 
+  u=document.querySelector('ul#box'); 
   if(u!==null){
     u.remove();
   }

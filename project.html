@@ -2,21 +2,22 @@
 <html>
     </head>
         <meta charset="utf-8">
-        <title>世界の天気</title>
+        <title class="center">世界の天気</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" defer></script>
         <script src="weather.js" defer></script>
         <link rel="stylesheet" href="style.css">
     </head>
 </html>
 <body>
-    
+    <div class="center">
     <ul>
-        <label for="kuni">国：</label>
+        <label for="kuni">都市：</label>
         <input type="text" name="kuni" id="kuni" size="10">
         <button id="print">表示</button>
-        <li><h2>世界の天気（検索結果１件）</h2></li>
+        <li><h2 class="h2">世界の天気（検索結果１件）</h2></li>
         <div id="result">
         
      </div>
     </ul>
+    </div>
 </body>
